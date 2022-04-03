@@ -1,0 +1,5 @@
+package smPackage.Repository;
+
+public class MockUpQuestionRepository {
+
+}

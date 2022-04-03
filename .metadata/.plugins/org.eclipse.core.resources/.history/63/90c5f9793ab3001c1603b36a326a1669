@@ -1,0 +1,5 @@
+package smPackage.Helper;
+
+public class MarkWeightCalculator {
+
+}

@@ -1,0 +1,66 @@
+package smPackage.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import smPackage.Models.Question;
+
+public class MockUpQuestionRepository implements IQuestionsRepository
+{
+	private List<Question> questions = new ArrayList<Question>();
+	public MockUpQuestionRepository()
+	{
+		generateQuestions();
+	}
+
+	@Override
+	public List<Question> getQuestions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Question getQuestionById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Question addQuestion(Question question) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Question removeQuestionById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Question editQuestionById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	private List<Question> QuestionsDB = new ArrayList<Question>();
+	
+	private void generateQuestions()
+	{
+		var question = new Question(1);
+		var choices = new ArrayList<String>();
+		question.setQuestion("If there are 30 question in the quiz, what is the progression for each WRONG answer provided?");
+		
+		choices.add("0.00%");
+		choices.add("3.33%");
+		choices.add("10.00%");
+		choices.add("6.66%");
+		
+		question.setChoices(choices);
+		
+		question.setAnswer(2);
+		
+		this.questions.add(question);
+		
+	}
+}
