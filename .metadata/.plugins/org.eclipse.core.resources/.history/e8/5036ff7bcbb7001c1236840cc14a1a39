@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import smPackage.Helper.ConsoleActions;
 import smPackage.Models.Question;
 
 import smPackage.Repository.*;
@@ -13,7 +12,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		Scanner userInput = new Scanner(System.in);
-		int input = 0;
+		String input = "a";
 		
 		// TODO Auto-generated method stub
 		System.out.println("**********************************************************");
@@ -22,14 +21,14 @@ public class Program {
 		System.out.println("");
 		
 		System.out.println("Instructions: When choosing the answer, choose the choice number instead of typing the answer");
-		System.out.println("[Continue, Wait]");
-		System.out.print("? ");
+		System.out.println("When you are ready, press 'Y' key to continue.");
 		
-		while (input != 1)
+		while (true)
 		{
-			input = userInput.nextInt();
+			input = userInput.nextLine();
+			if (input == "y" || input == "Y")
+				break;
 		}
-		System.out.println("\n");
 		
 		
 		IQuestionsRepository questions = new MockUpQuestionRepository();

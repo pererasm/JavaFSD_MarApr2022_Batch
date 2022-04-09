@@ -28,6 +28,7 @@ public class Program {
 		while (input != 1)
 		{
 			input = userInput.nextInt();
+			ConsoleActions.ClearConsole();
 		}
 		System.out.println("\n");
 		

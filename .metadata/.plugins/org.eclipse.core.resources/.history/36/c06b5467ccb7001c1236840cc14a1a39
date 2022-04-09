@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import smPackage.Helper.ConsoleActions;
 import smPackage.Models.Question;
 
 import smPackage.Repository.*;
@@ -29,7 +28,6 @@ public class Program {
 		{
 			input = userInput.nextInt();
 		}
-		System.out.println("\n");
 		
 		
 		IQuestionsRepository questions = new MockUpQuestionRepository();
