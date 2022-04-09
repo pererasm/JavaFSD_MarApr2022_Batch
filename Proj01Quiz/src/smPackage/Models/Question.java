@@ -9,6 +9,7 @@ public class Question
 	private String question;
 	private List<String> choices = new ArrayList<String>();
 	private int answer;
+	private int userInput;
 	private int markWeight = 10;
 	
 	public Question(int id)
@@ -58,4 +59,21 @@ public class Question
 		this.markWeight = markWeight;
 	}
 	
+	public void setUserInput(int userInput) {
+		this.userInput = userInput;
+	}
+	
+	public int getUserInput()
+	{
+		return userInput;
+	}
+	
+	public int getMarks()
+	{
+		if (getAnswer() == getUserInput())
+		{
+			return getMarkWeight();
+		}
+		return 0;
+	}
 }

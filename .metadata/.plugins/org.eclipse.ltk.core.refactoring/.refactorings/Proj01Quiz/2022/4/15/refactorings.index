@@ -7,3 +7,6 @@
 1648982386526	Encapsulate field 'totalMarkWeight'
 1648982513383	Encapsulate field 'totalMarkWeight'
 1648983526877	Rename compilation unit 'QuestionsRepository.java'
+1649476549186	Delete element
+1649478066502	Rename local variable 'TotalCorrectMarks'
+1649478075536	Rename local variable 'TotalMarks'

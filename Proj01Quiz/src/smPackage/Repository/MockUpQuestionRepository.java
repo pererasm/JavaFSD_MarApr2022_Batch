@@ -7,9 +7,22 @@ import smPackage.Models.Question;
 
 public class MockUpQuestionRepository implements IQuestionsRepository
 {
+	private int totalMarkWeight = 0;
+	
+	private int totalQuestions;
+	
+	private float passMarkPercentage = 75f;
+	
 	public MockUpQuestionRepository()
 	{
 		generateQuestions();
+		
+		this.totalQuestions = QuestionsDB.size();
+		
+		for (var question : QuestionsDB)
+		{
+			this.totalMarkWeight += question.getMarkWeight();
+		}
 	}
 
 	@Override
@@ -45,6 +58,44 @@ public class MockUpQuestionRepository implements IQuestionsRepository
 	public Question editQuestionById(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public int getTotalQuestions() {
+		return totalQuestions;
+	}
+
+	public int getTotalMarkWeight() {
+		return totalMarkWeight;
+	}
+	
+	public float getTotalMarks()
+	{
+		int totalCorrectMarks = 0, totalMarks = 0;
+		for (var question : getQuestions())
+		{
+			totalCorrectMarks += question.getMarks();
+			totalMarks += question.getMarkWeight();
+		}
+		return totalCorrectMarks / totalMarks * 100;
+	}
+	
+	public void setPassedMarkPercentage(float passMarkPercentage)
+	{
+		this.passMarkPercentage = passMarkPercentage;
+	}
+	
+	public float getPassedMarkPercentage()
+	{
+		return passMarkPercentage;
+	}
+	
+	public Boolean getPassedSatus()
+	{
+		if (getTotalMarks() >= getPassedMarkPercentage())
+		{
+			return true;
+		}
+		return false;
 	}
 	
 	private List<Question> QuestionsDB = new ArrayList<Question>();

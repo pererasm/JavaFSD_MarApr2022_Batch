@@ -10,4 +10,6 @@ public interface IQuestionsRepository {
 	public Question addQuestion(Question question);
 	public Question removeQuestionById(int id);
 	public Question editQuestionById(int id);
+	public Boolean getPassedSatus();
+	public float getTotalMarks();
 }
