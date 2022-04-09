@@ -46,7 +46,7 @@ public class Program {
 		}
 		System.out.println("Your total is " + questions.getTotalMarks() + " of 100.0");
 		
-		userInput.next();
+		userInput.close();
 	}
 
 }

@@ -63,6 +63,8 @@ public class Program {
 		{
 			System.out.println(PrintHelpers.expectation);
 		}
+		
+		userInput.close();
 	}
 
 	public static void evenOddModule(Scanner userInput)
