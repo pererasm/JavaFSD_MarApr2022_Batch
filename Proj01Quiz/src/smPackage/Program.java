@@ -1,12 +1,6 @@
 package smPackage;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
-import smPackage.Helper.ConsoleActions;
-import smPackage.Models.Question;
-
 import smPackage.Repository.*;
 
 public class Program {
@@ -15,7 +9,6 @@ public class Program {
 		Scanner userInput = new Scanner(System.in);
 		int input = 0;
 		
-		// TODO Auto-generated method stub
 		System.out.println("**********************************************************");
 		System.out.println("*                 QUIZ TIME by SM Perera                 *");
 		System.out.println("**********************************************************");
@@ -52,6 +45,8 @@ public class Program {
 			System.out.println("You have Failed!!! Better Luck Next Time");
 		}
 		System.out.println("Your total is " + questions.getTotalMarks() + " of 100.0");
+		
+		userInput.next();
 	}
 
 }
